@@ -1,4 +1,4 @@
-# Leetcode 1738. Merge Strings Alternately
+# Leetcode 1768. Merge Strings Alternately
 def mergeAlternately(self, word1: str, word2: str) -> str:
     i, j = 0, 0
     result = []
@@ -13,3 +13,16 @@ def mergeAlternately(self, word1: str, word2: str) -> str:
     result.append(word2[j:])
 
     return "".join(result)
+
+# Leetcode 1822. Sign of the Product of an Array
+
+
+def arraySign(self, nums: List[int]) -> int:
+    neg = 0
+
+    for n in nums:
+        if n == 0:
+            return 0
+        neg += (1 if n < 0 else 0)
+
+    return -1 if neg % 2 else 1
