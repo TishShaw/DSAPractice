@@ -15,8 +15,6 @@ def mergeAlternately(self, word1: str, word2: str) -> str:
     return "".join(result)
 
 # Leetcode 1822. Sign of the Product of an Array
-
-
 def arraySign(self, nums: List[int]) -> int:
     neg = 0
 
