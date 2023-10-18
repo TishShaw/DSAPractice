@@ -14,6 +14,7 @@ def mergeAlternately(self, word1: str, word2: str) -> str:
 
     return "".join(result)
 
+
 # Leetcode 1822. Sign of the Product of an Array
 def arraySign(self, nums: List[int]) -> int:
     neg = 0
@@ -24,3 +25,41 @@ def arraySign(self, nums: List[int]) -> int:
         neg += (1 if n < 0 else 0)
 
     return -1 if neg % 2 else 1
+
+
+#  1071. Greatest Common Divisor of Strings
+def gcdOfStrings(self, str1: str, str2: str) -> str:
+    def gcd(a, b):
+        while b:
+            a, b = b, a % b
+        return a
+
+    len1, len2 = len(str1), len(str2)
+
+    common_len = gcd(len1, len2)
+
+    common_substring = str1[:common_len]
+
+    if str1 == common_substring * (len1 // common_len) and str2 == common_substring * (len2 // common_len):
+        return common_substring
+    else:
+        return ""
+
+
+# 345. Reverse Vowerls of a String
+def reverseVowels(self, s: str) -> str:
+    chars = list(s)
+    kVowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+    l, r = 0, len(s) - 1
+
+    while l < r:
+        while l < r and chars[l] not in kVowels:
+            l += 1
+        while l < r and chars[r] not in kVowels:
+            r -= 1
+
+        chars[l], chars[r] = chars[r], chars[l]
+        l += 1
+        r -= 1
+
+    return "".join(chars)
