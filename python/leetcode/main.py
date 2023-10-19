@@ -46,7 +46,7 @@ def gcdOfStrings(self, str1: str, str2: str) -> str:
         return ""
 
 
-# 345. Reverse Vowerls of a String
+# 345. Reverse Vowels of a String
 def reverseVowels(self, s: str) -> str:
     chars = list(s)
     kVowels = {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
@@ -63,3 +63,19 @@ def reverseVowels(self, s: str) -> str:
         r -= 1
 
     return "".join(chars)
+
+
+# 151. Reverse Words in a String
+def reverseWords(self, s: str) -> str:
+    newStr = s.split()
+    l, r = 0, len(newStr) - 1
+
+    while l <= r:
+        temp = newStr[l]
+        newStr[l] = newStr[r]
+        newStr[r] = temp
+
+        l += 1
+        r -= 1
+
+    return " ".join(newStr)
