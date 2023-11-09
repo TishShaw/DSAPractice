@@ -95,3 +95,18 @@ def productExceptSelf(self, nums: List[int]) -> List[int]:
         suffix *= num
 
     return ans
+
+# 1431. Kids With the Greatest Number of Candies
+
+
+def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+    result = []
+    n = len(candies)
+    maximum = max(candies)
+
+    for i in range(n):
+        if candies[i] + extraCandies >= maximum:
+            result.append(True)
+        else:
+            result.append(False)
+    return result
